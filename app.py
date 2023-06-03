@@ -47,11 +47,7 @@ agent_executor = create_vectorstore_agent(
     verbose=True
 )
 st.title('🦜🔗 GPT Investment Banker')
-# Create a text input box for the user
-prompt = st.text_input('Input your prompt here')
-
-# If the user hits enter
-if prompt:
+if prompt := st.text_input('Input your prompt here'):
     # Then pass the prompt to the LLM
     response = agent_executor.run(prompt)
     # ...and write it out to the screen
